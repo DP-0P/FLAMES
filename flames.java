@@ -3,47 +3,48 @@ public class flames {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter first name");
-        String s5 = sc.nextLine();
+        String strBfr1 = sc.nextLine();
         System.out.println("Enter second name");
-        String s6 = sc.nextLine();
-        s5 = s5.toLowerCase();
-        s6 = s6.toLowerCase();
-        StringBuilder s1 = new StringBuilder(s5);
-        StringBuilder s2 = new StringBuilder(s6);
-        for(int i=0; i<s1.length();i++){
-            for(int j=0; j<s2.length();j++){
-                if(s1.charAt(i) == s2.charAt(j)){
-                    s1.replace(i,i+1,"*");
-                    s2.replace(j,j+1,"*");
+        String strBfr2 = sc.nextLine();
+        strBfr1 = strBfr1.toLowerCase();
+        strBfr2 = strBfr2.toLowerCase();
+        StringBuilder str1 = new StringBuilder(strBfr1);
+        StringBuilder str2 = new StringBuilder(strBfr2);
+        
+        for(int i=0; i<str1.length();i++){
+            for(int j=0; j<str2.length();j++){
+                if(str1.charAt(i) == str2.charAt(j)){
+                    str1.replace(i,i+1,"*");
+                    str2.replace(j,j+1,"*");
                 }
             }
         }
-        String s3 = "";
-        String s4 = "";
-        s1.toString();
-        s2.toString();
-        for(int i=0; i<s1.length();i++){
-            if(s1.charAt(i)!='*')
-            s3=s3+s1.charAt(i);
+        String strTemp1 = "";
+        String strTemp2 = "";
+        str1.toString();
+        str2.toString();
+        for(int i=0; i<str1.length();i++){
+            if(str1.charAt(i)!='*')
+            strTemp1=strTemp1+str1.charAt(i);
         }
-        for(int i=0; i<s2.length();i++){
-            if(s2.charAt(i)!='*')
-            s4=s4+s2.charAt(i);
+        for(int i=0; i<str2.length();i++){
+            if(str2.charAt(i)!='*')
+            strTemp2=strTemp2+str2.charAt(i);
         }
-        int fLength = s3.length()+s4.length();
+        int fLength = strTemp1.length()+strTemp2.length();
         StringBuilder flames = new StringBuilder("flames");
-        String gg="";
+        String flamesChk="";
         while(flames.length()!=1){
             int mod = fLength%flames.length();
 
             if(mod!=0)
-            gg = flames.substring(mod)+flames.substring(0,mod-1);
+            flamesChk = flames.substring(mod)+flames.substring(0,mod-1);
 
             else
-            gg = flames.substring(0,flames.length()-1);
-            flames = new StringBuilder(gg);
+            flamesChk = flames.substring(0,flames.length()-1);
+            flames = new StringBuilder(flamesChk);
         }
-        switch(gg.charAt(0))
+        switch(flamesChk.charAt(0))
         {
             case 'f':
                 System.out.println("Friends");
