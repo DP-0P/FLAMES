@@ -56,7 +56,7 @@ public class flames {
                 System.out.println("Affection");
                 break;
             case 'm':
-                System.out.println("Marriage");
+                System.out.println("Marriage in 2024");
                 break;
             case 'e':
                 System.out.println("Enemy");
